@@ -152,7 +152,7 @@ def _obter_texto_do_teor(numero_processo: str, expediente: str) -> str | None:
                 return None
         return payload if isinstance(payload, str) else None
     except Exception:
-        print("não consegui consultar o teor do expediente")
+        st.write("não consegui consultar o teor do expediente")
         return None
 
 # ================================
@@ -218,6 +218,7 @@ if executar:
 
         # Passo 1: consultar teor e verificar expressão
         conteudo = _obter_texto_do_teor(numero_processo, expediente)
+        st.write("este é o texto obtido", conteudo)
         if conteudo and _buscar_expressao_no_conteudo(conteudo, expressao_busca):
             st.success("✅ Expressão encontrada no expediente. Enviando petição...")
 
