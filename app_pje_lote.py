@@ -190,7 +190,7 @@ if executar:
         st.stop()
 
     try:
-        df = pd.read_excel(arquivo_planilha)
+        df = pd.read_excel(arquivo_planilha, engine="openpyxl")
     except Exception as e:
         st.error(f"Não foi possível ler a planilha enviada: {e}")
         st.stop()
