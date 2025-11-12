@@ -32,6 +32,7 @@ def consultar_teor(numero_processo: str, expediente: str, cpf: str, senha: str, 
     try:
         response = requests.post(url, data=body.encode("utf-8"), headers=headers, timeout=90)
         raw_response = response.content.decode("utf-8", errors="ignore")
+        st.code(raw_response[:600])
 
         # Detecta se é multipart
         if not re.search(r'--uuid:[a-f0-9\-]{36}', raw_response):
@@ -75,4 +76,5 @@ def consultar_teor(numero_processo: str, expediente: str, cpf: str, senha: str, 
     except Exception as e:
         if debug:
             print(f"❌ Erro ao consultar teor ({numero_processo}): {e}")
+
         return False, None
