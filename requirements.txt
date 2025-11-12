@@ -1,5 +1,7 @@
-streamlit
-pandas
 requests
+requests_ntlm
+pandas
+streamlit
 openpyxl
 reportlab
+
