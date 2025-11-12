@@ -7,7 +7,7 @@ import requests
 import re, html, unicodedata
 # Importa sua função existente para consultar o teor (main.py)
 try:
-    from main_original import consultar_teor  # usa sua versão robusta
+    from main import consultar_teor  # usa sua versão robusta
 except Exception as e:
     consultar_teor = None
 
