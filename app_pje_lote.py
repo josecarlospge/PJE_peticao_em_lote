@@ -140,7 +140,7 @@ def _obter_texto_do_teor(numero_processo: str, expediente: str) -> str | None:
     if consultar_teor is None:
         return None
     try:
-        sucesso, payload = consultar_teor(numero_processo, expediente, cpf, senha, debug=False)
+        sucesso, payload = consultar_teor(numero_processo, expediente, cpf, senha, debug=True)
         # a função pode retornar o próprio texto ou um caminho de arquivo .html
         if payload and isinstance(payload, str) and payload.lower().endswith(".html"):
             try:
